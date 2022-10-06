@@ -10,3 +10,8 @@ Wishlist:
 - Minimaal twee verschillende visual filters
 - Custom muziek :P
 - ...
+
+
+
+Educatieve versie:
+Targets zijn altijd zichtbaar. Bovenin het scherm wordt een vraag/som weergegeven. Filters zijn gekoppeld aan de antwoorden op deze vraag. Targets mogen alleen geschoten worden wanneer het juiste filter actief is.
