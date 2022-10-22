@@ -11,6 +11,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Animator animator;
     [SerializeField] private LayerMask solidMask;
     [SerializeField] Transform feetTransform;
+    [SerializeField] Transform handTransform;
     [SerializeField] private Transform playerCamera;
     [SerializeField] private Rigidbody playerBody;
     [Space]
@@ -18,6 +19,9 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float sensitivity;
     [SerializeField] private float jumpForce;
     [SerializeField] private float cameraAngle;
+    [Space]
+    [SerializeField] private Rigidbody catcherBody;
+    [SerializeField] private float catcherSpeed;
 
     private void Update()
     {
@@ -45,6 +49,11 @@ public class PlayerController : MonoBehaviour
 
         MovePlayer();
         MovePlayerCamera();
+
+        if (Input.GetKeyDown(KeyCode.Mouse0))
+        {
+            Shoot();
+        }
     }
 
     private void MovePlayer()
@@ -65,5 +74,11 @@ public class PlayerController : MonoBehaviour
     {
         transform.Rotate(0f, playerMouseInput.x * sensitivity, 0f);
         playerCamera.transform.localRotation = Quaternion.Euler(cameraAngle, 0f, 0f);
+    }
+
+    private void Shoot()
+    {
+        Rigidbody catcher = Instantiate(catcherBody, handTransform.position, transform.rotation);
+        catcher.velocity = transform.forward * speed + transform.up * speed;
     }
 }
