@@ -111,8 +111,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1e3da8fc732e0b4480ff46befb76d6a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  catcherPrefab: {fileID: 4479194416176085920}
-  catcherSpeed: 4
+  _explosion: {fileID: 6645170797767201761, guid: 385949eb0a4a53c4b8cc560d1be3a4be,
+    type: 3}
 --- !u!54 &3820226348971966857
 Rigidbody:
   m_ObjectHideFlags: 0

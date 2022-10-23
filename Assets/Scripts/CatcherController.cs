@@ -6,6 +6,9 @@ public class CatcherController : MonoBehaviour {
 
     public GameObject thrower { get; set; }
 
+    [SerializeField]
+    private GameObject _explosion;
+
     private void Start()
     {
         Destroy(gameObject, 5.0f);
@@ -19,6 +22,7 @@ public class CatcherController : MonoBehaviour {
             GameObject npc = NPCController.NPCs[i];
             if (Vector3.Distance(transform.position, npc.transform.position) < 1)
             {
+                Instantiate(_explosion, transform.position, Quaternion.identity);
                 Destroy(npc);
                 Destroy(gameObject);
                 print(thrower + " caught " + npc.GetComponent<NPCController>().partijNaam);
