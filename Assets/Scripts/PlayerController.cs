@@ -8,6 +8,7 @@ public class PlayerController : MonoBehaviour
     private Vector2 playerMouseInput;
     private bool isGrounded;
 
+    [SerializeField] private CatcherManager catcherManager;
     [SerializeField] private Animator animator;
     [SerializeField] private LayerMask solidMask;
     [SerializeField] Transform feetTransform;
@@ -19,9 +20,6 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float sensitivity;
     [SerializeField] private float jumpForce;
     [SerializeField] private float cameraAngle;
-    [Space]
-    [SerializeField] private Rigidbody catcherBody;
-    [SerializeField] private float catcherSpeed;
 
     private void Update()
     {
@@ -78,7 +76,6 @@ public class PlayerController : MonoBehaviour
 
     private void Shoot()
     {
-        Rigidbody catcher = Instantiate(catcherBody, handTransform.position, transform.rotation);
-        catcher.velocity = transform.forward * speed + transform.up * speed;
+        catcherManager.SpawnCatcher(handTransform.position, transform.rotation, gameObject);
     }
 }

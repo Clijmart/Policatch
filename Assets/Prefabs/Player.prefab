@@ -65,6 +65,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e10d08ddb08d56468e5f7b278128c65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  catcherManager: {fileID: 2415023797729314226, guid: 3d2a3b5580e761740865af13cccdad47,
+    type: 3}
   animator: {fileID: 7424408580004302014}
   solidMask:
     serializedVersion: 2
@@ -77,9 +79,6 @@ MonoBehaviour:
   sensitivity: 3
   jumpForce: 5
   cameraAngle: 20
-  catcherBody: {fileID: 3820226348971966857, guid: a23fbd863f9ba694da3f03d855c2bff4,
-    type: 3}
-  catcherSpeed: 4
 --- !u!136 &2232403226231496311
 CapsuleCollider:
   m_ObjectHideFlags: 0
