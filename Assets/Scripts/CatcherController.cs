@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class CatcherController : MonoBehaviour {
+    [SerializeField] private NPCManager NPCManager;
 
     public GameObject thrower { get; set; }
 
@@ -17,15 +18,15 @@ public class CatcherController : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-        for (int i = 0; i < NPCController.NPCs.Count; i++)
+        for (int i = 0; i < NPCManager.NPCs.Count; i++)
         {
-            GameObject npc = NPCController.NPCs[i];
+            GameObject npc = NPCManager.NPCs[i];
             if (Vector3.Distance(transform.position, npc.transform.position) < 2)
             {
                 Instantiate(_explosion, transform.position, Quaternion.identity);
-                Destroy(npc);
-                Destroy(gameObject);
                 print(thrower + " caught " + npc.GetComponent<NPCController>().partijNaam);
+                NPCManager.DespawnNPC(npc);
+                Destroy(gameObject);
             }
         }
     }

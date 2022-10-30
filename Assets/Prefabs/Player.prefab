@@ -128,11 +128,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0240cad4d609214db01b606b6e85c94, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  catcherManager: {fileID: 0}
+  NPCManager: {fileID: 1327508872280729648, guid: 272aa679e8bb36d4980b14d55d5a0555,
+    type: 3}
+  catcherManager: {fileID: 2415023797729314226, guid: 3d2a3b5580e761740865af13cccdad47,
+    type: 3}
   controller: {fileID: 3152178973327602968}
   cam: {fileID: 0}
   animator: {fileID: 5930414698064494486}
   handTransform: {fileID: 254102440626044534}
+  spawnpoint: {fileID: 0}
   speed: 6
   turnSmoothTime: 0.1
   gravity: -9.81
@@ -142,6 +146,9 @@ MonoBehaviour:
   solidMask:
     serializedVersion: 2
     m_Bits: 64
+  bounds:
+    m_Center: {x: 0, y: 0, z: 0}
+    m_Extent: {x: 162, y: 60, z: 172}
 --- !u!1001 &3152178972475760395
 PrefabInstance:
   m_ObjectHideFlags: 0

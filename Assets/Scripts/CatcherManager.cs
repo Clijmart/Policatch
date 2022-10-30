@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class CatcherManager : MonoBehaviour
 {
-
     [SerializeField] private GameObject catcherPrefab;
     [SerializeField] private float horizontalSpeed;
     [SerializeField] private float verticalSpeed;

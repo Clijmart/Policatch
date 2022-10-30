@@ -4,23 +4,16 @@ using UnityEngine;
 
 public class NPCController : MonoBehaviour
 {
-    [SerializeField]
-    private GameObject player;
+    [SerializeField] private NPCManager NPCManager;
+    [SerializeField] private float rotationSpeed;
 
-    public static List<GameObject> NPCs = new List<GameObject>();
-
+    public GameObject player { get; set; }
     public string partijNaam { get; set; }
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        partijNaam = "VVD";
-        NPCs.Add(gameObject);
-    }
+    public SpawnPoint spawn { get; set; }
 
     void Update()
     {
-        float str = Mathf.Min(Time.deltaTime, 1);
+        float str = Mathf.Min(rotationSpeed * Time.deltaTime, 1);
 
         Vector3 lookDir = transform.position - player.transform.position;
 
@@ -33,8 +26,10 @@ public class NPCController : MonoBehaviour
              targetRotation, str);
     }
 
-    void OnDestroy()
+    public void Despawn()
     {
-        NPCs.Remove(gameObject);
+        spawn.setOccupant(null);
+        NPCManager.NPCs.Remove(gameObject);
+        Destroy(gameObject);
     }
 }
