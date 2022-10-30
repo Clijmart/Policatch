@@ -20,7 +20,7 @@ public class CatcherController : MonoBehaviour {
         for (int i = 0; i < NPCController.NPCs.Count; i++)
         {
             GameObject npc = NPCController.NPCs[i];
-            if (Vector3.Distance(transform.position, npc.transform.position) < 1)
+            if (Vector3.Distance(transform.position, npc.transform.position) < 2)
             {
                 Instantiate(_explosion, transform.position, Quaternion.identity);
                 Destroy(npc);
