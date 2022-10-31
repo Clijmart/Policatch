@@ -8779,7 +8779,7 @@ PrefabInstance:
     - target: {fileID: 3152178973327602967, guid: 546866a5c4518e64a8991f636d690ab1,
         type: 3}
       propertyPath: bounds.m_Extent.y
-      value: 70
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 3152178973327602967, guid: 546866a5c4518e64a8991f636d690ab1,
         type: 3}

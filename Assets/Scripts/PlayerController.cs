@@ -17,6 +17,9 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float turnSmoothTime = 0.1f;
     [SerializeField] private float gravity = -9.81f;
     [SerializeField] private float jumpHeight = 3f;
+    [SerializeField] private float movingJumpMultiplier = 1.2f;
+    [SerializeField] private float sprintMultiplier = 1.5f;
+    [SerializeField] private float sprintJumpMultiplier = 1.2f;
     [Space]
     [SerializeField] private Transform groundCheck;
     [SerializeField] private float groundDistance = 0.4f;
@@ -26,6 +29,8 @@ public class PlayerController : MonoBehaviour
     private float turnSmoothVelocity;
     private Vector3 velocity;
     private bool isGrounded;
+    private bool isSprinting;
+    private bool isMoving;
 
     /// <summary>
     /// Called on creation.
@@ -44,6 +49,8 @@ public class PlayerController : MonoBehaviour
     /// </summary>
     void Update()
     {
+        CheckSprinting();
+
         CheckGrounded();
 
         Move();
@@ -57,6 +64,23 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.N)) RefreshSpawns();
 
         if (!bounds.Contains(transform.position)) Respawn();
+    }
+
+    /// <summary>
+    /// Check if player is sprinting.
+    /// </summary>
+    private void CheckSprinting()
+    {
+        if (Input.GetKey(KeyCode.LeftShift))
+        {
+            isSprinting = true;
+            animator.SetBool("IsSprinting", true);
+        }
+        else
+        {
+            isSprinting = false;
+            animator.SetBool("IsSprinting", false);
+        }
     }
 
     /// <summary>
@@ -94,6 +118,7 @@ public class PlayerController : MonoBehaviour
 
         if (direction.magnitude >= 0.1f)
         {
+            isMoving = true;
             animator.SetBool("IsMoving", true);
 
             // Calculate the angle between the two axises
@@ -102,10 +127,11 @@ public class PlayerController : MonoBehaviour
             transform.rotation = Quaternion.Euler(0f, angle, 0f);
 
             Vector3 moveDirection = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward;
-            controller.Move(moveDirection.normalized * speed * Time.deltaTime);
+            controller.Move(moveDirection.normalized * speed * Time.deltaTime * (isSprinting ? sprintMultiplier : 1));
         }
         else
         {
+            isMoving = false;
             animator.SetBool("IsMoving", false);
         }
     }
@@ -115,10 +141,8 @@ public class PlayerController : MonoBehaviour
     /// </summary>
     private void Jump()
     {
-
         animator.SetBool("IsJumping", true);
-
-        velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
+        velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity * (isMoving ? movingJumpMultiplier : 1) * (isSprinting ? sprintJumpMultiplier : 1));
     }
 
     /// <summary>
