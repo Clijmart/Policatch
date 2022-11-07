@@ -26,6 +26,8 @@ public class CatcherController : MonoBehaviour {
                 Instantiate(_explosion, transform.position, Quaternion.identity);
                 print(thrower + " caught " + npc.GetComponent<NPCController>().partijNaam);
                 NPCManager.DespawnNPC(npc);
+                thrower.GetComponent<PlayerController>().AddPoints(1);
+
                 Destroy(gameObject);
             }
         }

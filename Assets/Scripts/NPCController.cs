@@ -28,7 +28,7 @@ public class NPCController : MonoBehaviour
 
     public void Despawn()
     {
-        spawn.setOccupant(null);
+        spawn.removeOccupant(player);
         NPCManager.NPCs.Remove(gameObject);
         Destroy(gameObject);
     }

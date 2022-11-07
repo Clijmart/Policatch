@@ -32,6 +32,8 @@ public class PlayerController : MonoBehaviour
     private bool isSprinting;
     private bool isMoving;
 
+    private int points = 0;
+
     /// <summary>
     /// Called on creation.
     /// Used to set player variables and respawn the player.
@@ -189,5 +191,23 @@ public class PlayerController : MonoBehaviour
                 }
             }
         }
+    }
+
+    public int Points()
+    {
+        return points;
+    }
+
+    public void Points(int points)
+    {
+        this.points = points;
+    }
+
+    public int AddPoints(int points)
+    {
+        int newPoints = points + Points();
+        Points(newPoints);
+
+        return newPoints;
     }
 }

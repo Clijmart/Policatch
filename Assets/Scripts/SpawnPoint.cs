@@ -6,6 +6,7 @@ public class SpawnPoint : MonoBehaviour
 {
     public static Dictionary<GameObject, List<SpawnPoint>> spawnPoints = new Dictionary<GameObject, List<SpawnPoint>>();
 
+    [SerializeField] private NPCManager NPCManager;
     [SerializeField] private GameObject spawnPrefab;
 
     private GameObject occupant;
@@ -29,5 +30,20 @@ public class SpawnPoint : MonoBehaviour
     public GameObject getOccupant()
     {
         return occupant;
+    }
+
+    public void removeOccupant(GameObject causer)
+    {
+        occupant = null;
+        StartCoroutine(respawnIn(5f, causer));
+    }
+
+    public IEnumerator respawnIn(float respawnTime, GameObject causer)
+    {
+        yield return new WaitForSeconds(respawnTime);
+        if (getOccupant() == null)
+        {
+            NPCManager.SpawnNPC(causer, this);
+        }
     }
 }
