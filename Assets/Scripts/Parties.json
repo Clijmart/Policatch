@@ -1,0 +1,34 @@
+{
+  "parties": [
+    {
+      "name": "VVD",
+      "descriptions": [
+        "Vang de grootste partij.",
+        "Vang de partij waarvan Mark Rutte de partijleider is.",
+        "Vang de partij met 34 zetels in de huidige tweede kamer."
+      ]
+    },
+    {
+      "name": "PvdA",
+      "descriptions": [
+        "Vang de partij waarvan Attje Kuiken de partijleider is.",
+        "Vang de partij die is voortgekomen uit de fusie van SDAP, VDB en CDU."
+      ]
+    },
+    {
+      "name": "GroenLinks",
+      "descriptions": [
+        "Vang de partij waarvan Jesse Klaver de partijleider is.",
+        "Vang de partij die is voortgekomen uit de fusie van PPR, PSP, CPN en EVP.",
+        "Vang de partij met 8 zetels in de huidige tweede kamer."
+      ]
+    },
+    {
+      "name": "Democraten 66",
+      "descriptions": [
+        "Vang de partij waarvan Sigrid Kaag de partijleider is.",
+        "Vang de partij met 24 zetels in de huidige tweede kamer."
+      ]
+    }
+  ]
+}

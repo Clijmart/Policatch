@@ -33,6 +33,7 @@ public class PlayerController : MonoBehaviour
     private bool isMoving;
 
     private int points = 0;
+    private Task task;
 
     /// <summary>
     /// Called on creation.
@@ -166,6 +167,8 @@ public class PlayerController : MonoBehaviour
 
         transform.position = position;
         transform.rotation = spawnPoint.rotation;
+
+        RefreshTask();
     }
 
     /// <summary>
@@ -209,5 +212,16 @@ public class PlayerController : MonoBehaviour
         Points(newPoints);
 
         return newPoints;
+    }
+
+    public Task RefreshTask()
+    {
+        task = Task.GenerateTask();
+        return task;
+    }
+
+    public Task CurrentTask()
+    {
+        return task;
     }
 }

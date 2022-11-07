@@ -7,9 +7,12 @@ public class CanvasController : MonoBehaviour
 {
     [SerializeField] private GameObject player;
     [SerializeField] private TextMeshProUGUI pointsText;
+    [SerializeField] private TextMeshProUGUI taskText;
 
     void Update()
     {
-        pointsText.text = player.GetComponent<PlayerController>().Points() + " points";
+        PlayerController playerController = player.GetComponent<PlayerController>();
+        pointsText.text = playerController.Points() + " points";
+        taskText.text = playerController.CurrentTask().Description();
     }
 }

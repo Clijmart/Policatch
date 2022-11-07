@@ -7,15 +7,14 @@ public class CatcherController : MonoBehaviour {
 
     public GameObject thrower { get; set; }
 
-    [SerializeField]
-    private GameObject _explosion;
+    [SerializeField] private GameObject correctExplosion;
+    [SerializeField] private GameObject wrongExplosion;
 
     private void Start()
     {
         Destroy(gameObject, 5.0f);
     }
 
-    // Update is called once per frame
     void Update()
     {
         for (int i = 0; i < NPCManager.NPCs.Count; i++)
@@ -23,11 +22,22 @@ public class CatcherController : MonoBehaviour {
             GameObject npc = NPCManager.NPCs[i];
             if (Vector3.Distance(transform.position, npc.transform.position) < 2)
             {
-                Instantiate(_explosion, transform.position, Quaternion.identity);
-                print(thrower + " caught " + npc.GetComponent<NPCController>().partijNaam);
-                NPCManager.DespawnNPC(npc);
-                thrower.GetComponent<PlayerController>().AddPoints(1);
+                NPCController npcController = npc.GetComponent<NPCController>();
+                PlayerController playerController = thrower.GetComponent<PlayerController>();
+                if (npcController.party.Equals(playerController.CurrentTask().Name()))
+                {
+                    Instantiate(correctExplosion, transform.position, Quaternion.identity);
+                    print(thrower + " caught " + npcController.party);
+                    playerController.AddPoints(1);
+                    playerController.RefreshTask();
+                } else
+                {
+                    Instantiate(wrongExplosion, transform.position, Quaternion.identity);
+                    print("Wrong party!");
+                    playerController.AddPoints(-1);
+                }
 
+                NPCManager.DespawnNPC(npc);
                 Destroy(gameObject);
             }
         }

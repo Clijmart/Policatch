@@ -8,6 +8,20 @@ public class NPCManager : MonoBehaviour
 
     public static List<GameObject> NPCs = new List<GameObject>();
 
+    private void Start()
+    {
+        foreach (var (prefab, transforms) in SpawnPoint.spawnPoints)
+        {
+            foreach (SpawnPoint spawn in transforms)
+            {
+                if (spawn.getOccupant() == null)
+                {
+                    SpawnNPC(gameObject, spawn);
+                }
+            }
+        }
+    }
+
     public GameObject SpawnNPC(GameObject player, SpawnPoint spawnPoint)
     {
         Vector3 position = spawnPoint.transform.position;
@@ -15,7 +29,7 @@ public class NPCManager : MonoBehaviour
 
         GameObject npc = Instantiate(npcPrefab, position, Quaternion.identity);
         npc.GetComponent<NPCController>().spawn = spawnPoint;
-        npc.GetComponent<NPCController>().partijNaam = "VVD";
+        npc.GetComponent<NPCController>().party = PartyManager.RandomParty().name;
         npc.GetComponent<NPCController>().player = player;
         NPCs.Add(npc);
 

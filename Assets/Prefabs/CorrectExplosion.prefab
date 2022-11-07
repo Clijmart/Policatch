@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 5744969950871643003}
   - component: {fileID: -3496596111899323045}
   m_Layer: 0
-  m_Name: CatcherExplosion
+  m_Name: CorrectExplosion
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4821,7 +4821,7 @@ ParticleSystemRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 97e558f674aab6c44a37b81235b8eacc, type: 2}
+  - {fileID: 2100000, guid: c062ec5b9ee2ad64391e93f4890c4742, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
