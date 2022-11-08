@@ -9,7 +9,7 @@ public class PartyManager : MonoBehaviour
 
     public static List<Party> parties = new List<Party>();
 
-    void Start()
+    public void LoadParties()
     {
         Parties partiesInJson = JsonUtility.FromJson<Parties>(partiesFile.text);
 
@@ -20,8 +20,11 @@ public class PartyManager : MonoBehaviour
         }
     }
 
-    public static Party RandomParty()
+    public Party RandomParty()
     {
+        if (parties.Count < 1) {
+            LoadParties();
+        }
         return parties[Random.Range(0, parties.Count)];
     }
 }

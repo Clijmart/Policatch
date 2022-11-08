@@ -6,6 +6,7 @@ public class PlayerController : MonoBehaviour
 {
     [SerializeField] private NPCManager NPCManager;
     [SerializeField] private CatcherManager catcherManager;
+    [SerializeField] private TaskManager TaskManager;
     [Space]
     [SerializeField] private CharacterController controller;
     [SerializeField] private Transform cam;
@@ -216,7 +217,7 @@ public class PlayerController : MonoBehaviour
 
     public Task RefreshTask()
     {
-        task = Task.GenerateTask();
+        task = TaskManager.GenerateTask();
         return task;
     }
 

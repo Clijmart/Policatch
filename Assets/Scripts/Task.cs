@@ -5,18 +5,12 @@ using UnityEngine;
 public class Task
 {
     private Party party;
-    private string description;
+    private string description = "";
 
-    Task(Party party, string description)
+    public Task(Party party, string description)
     {
         this.party = party;
         this.description = description;
-    }
-
-    public static Task GenerateTask()
-    {
-        Party party = PartyManager.RandomParty();
-        return new Task(party, party.RandomDescription());
     }
 
     public Party Party()

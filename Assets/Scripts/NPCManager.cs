@@ -5,6 +5,8 @@ using UnityEngine;
 public class NPCManager : MonoBehaviour
 {
     [SerializeField] private GameObject npcPrefab;
+    [SerializeField] private PartyManager PartyManager;
+    [SerializeField] private GameObject playerObject;
 
     public static List<GameObject> NPCs = new List<GameObject>();
 
@@ -16,7 +18,7 @@ public class NPCManager : MonoBehaviour
             {
                 if (spawn.getOccupant() == null)
                 {
-                    SpawnNPC(gameObject, spawn);
+                    SpawnNPC(playerObject, spawn);
                 }
             }
         }
