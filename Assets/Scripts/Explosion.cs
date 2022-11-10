@@ -4,9 +4,13 @@ using UnityEngine;
 
 public class Explosion : MonoBehaviour
 {
-    // Start is called before the first frame update
+    [SerializeField] private float despawnTime = 2f;
+
+    /// <summary>
+    /// Despawn the explosion after a certain amount of time.
+    /// </summary>
     void Start()
     {
-        Destroy(gameObject, 2);
+        Destroy(gameObject, despawnTime);
     }
 }

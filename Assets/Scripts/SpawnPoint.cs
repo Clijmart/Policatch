@@ -8,10 +8,14 @@ public class SpawnPoint : MonoBehaviour
 
     [SerializeField] private NPCManager NPCManager;
     [SerializeField] private GameObject spawnPrefab;
+    [Space]
+    [SerializeField] private float respawnTime = 5f;
 
     private GameObject occupant;
 
-    // Start is called before the first frame update
+    /// <summary>
+    /// Add spawnpoint to a list.
+    /// </summary>
     void Start()
     {
         if (!spawnPoints.ContainsKey(spawnPrefab))
@@ -22,26 +26,43 @@ public class SpawnPoint : MonoBehaviour
         spawnPoints[spawnPrefab].Add(this);
     }
 
-    public void setOccupant(GameObject o)
+    /// <summary>
+    /// Set the spawnpoint's occupant.
+    /// </summary>
+    /// <param name="o">The new occupant of the spawnpoint</param>
+    public void SetOccupant(GameObject o)
     {
         occupant = o;
     }
 
-    public GameObject getOccupant()
+    /// <summary>
+    /// Get the spawnpoint's occupant.
+    /// </summary>
+    /// <returns>The occupant of the spawnpoint</returns>
+    public GameObject GetOccupant()
     {
         return occupant;
     }
 
-    public void removeOccupant(GameObject causer)
+    /// <summary>
+    /// Remove and respawn the current occupant.
+    /// </summary>
+    /// <param name="causer">The object that caused the occupant to be removed</param>
+    public void RemoveOccupant(GameObject causer)
     {
         occupant = null;
-        StartCoroutine(respawnIn(5f, causer));
+        StartCoroutine(Respawn(causer));
     }
 
-    public IEnumerator respawnIn(float respawnTime, GameObject causer)
+    /// <summary>
+    /// Respawn an NPC at the spawnpoint.
+    /// </summary>
+    /// <param name="causer">The object that caused the occupant to be respawned</param>
+    /// <returns>Enumerator used identify this coroutine in memory</returns>
+    public IEnumerator Respawn(GameObject causer)
     {
         yield return new WaitForSeconds(respawnTime);
-        if (getOccupant() == null)
+        if (GetOccupant() == null)
         {
             NPCManager.SpawnNPC(causer, this);
         }

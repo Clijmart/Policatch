@@ -239,8 +239,12 @@ MonoBehaviour:
     type: 3}
   correctExplosion: {fileID: 6645170797767201761, guid: 6abdde579d1a86b47b3db42fd7a7e9b2,
     type: 3}
+  correctPoints: 1
   wrongExplosion: {fileID: 6645170797767201761, guid: 385949eb0a4a53c4b8cc560d1be3a4be,
     type: 3}
+  wrongPoints: -1
+  despawnTime: 4
+  catchDistance: 2.5
 --- !u!54 &3820226348971966857
 Rigidbody:
   m_ObjectHideFlags: 0

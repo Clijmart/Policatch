@@ -154,6 +154,11 @@ PrefabInstance:
       propertyPath: NPCManager
       value: 
       objectReference: {fileID: 916921077}
+    - target: {fileID: 7961182069688334974, guid: fb9188a9ebc84ad42914369414418878,
+        type: 3}
+      propertyPath: respawnTime
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 7961182069688334975, guid: fb9188a9ebc84ad42914369414418878,
         type: 3}
       propertyPath: m_RootOrder
@@ -276,6 +281,11 @@ PrefabInstance:
       propertyPath: NPCManager
       value: 
       objectReference: {fileID: 916921077}
+    - target: {fileID: 7961182069688334974, guid: fb9188a9ebc84ad42914369414418878,
+        type: 3}
+      propertyPath: respawnTime
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 7961182069688334975, guid: fb9188a9ebc84ad42914369414418878,
         type: 3}
       propertyPath: m_RootOrder
@@ -538,74 +548,6 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -7868317190634769916, guid: 26a2716cd31e20e41b36735b46267dfc, type: 3}
---- !u!1 &191752084
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 191752087}
-  - component: {fileID: 191752086}
-  - component: {fileID: 191752085}
-  m_Layer: 0
-  m_Name: EventSystem
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &191752085
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 191752084}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4f231c4fb786f3946a6b90b886c48677, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_SendPointerHoverToParent: 1
-  m_HorizontalAxis: Horizontal
-  m_VerticalAxis: Vertical
-  m_SubmitButton: Submit
-  m_CancelButton: Cancel
-  m_InputActionsPerSecond: 10
-  m_RepeatDelay: 0.5
-  m_ForceModuleActive: 0
---- !u!114 &191752086
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 191752084}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 76c392e42b5098c458856cdf6ecaaaa1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_FirstSelected: {fileID: 0}
-  m_sendNavigationEvents: 1
-  m_DragThreshold: 10
---- !u!4 &191752087
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 191752084}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 8
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!64 &212066399
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -996,7 +938,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 383663255}
-  m_LocalRotation: {x: 0.10649046, y: -0.0000000042771338, z: 4.580787e-10, w: 0.9943138}
+  m_LocalRotation: {x: 0.10649046, y: 0.0000000042771364, z: -4.5807902e-10, w: 0.9943138}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1092,6 +1034,11 @@ PrefabInstance:
       propertyPath: NPCManager
       value: 
       objectReference: {fileID: 916921077}
+    - target: {fileID: 7961182069688334974, guid: fb9188a9ebc84ad42914369414418878,
+        type: 3}
+      propertyPath: respawnTime
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 7961182069688334975, guid: fb9188a9ebc84ad42914369414418878,
         type: 3}
       propertyPath: m_RootOrder
@@ -1459,7 +1406,7 @@ Transform:
   - {fileID: 2128492681}
   - {fileID: 2051690117}
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &755878976 stripped
 GameObject:
@@ -1752,7 +1699,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 808979760}
-  m_LocalRotation: {x: 0.12451124, y: 0.000000032223607, z: -0.0000000040436685, w: 0.9922182}
+  m_LocalRotation: {x: 0.12451124, y: -0.000000032223607, z: 0.0000000040436685, w: 0.9922182}
   m_LocalPosition: {x: 0, y: 51, z: -17}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1825,6 +1772,11 @@ PrefabInstance:
       propertyPath: NPCManager
       value: 
       objectReference: {fileID: 916921077}
+    - target: {fileID: 7961182069688334974, guid: fb9188a9ebc84ad42914369414418878,
+        type: 3}
+      propertyPath: respawnTime
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 7961182069688334975, guid: fb9188a9ebc84ad42914369414418878,
         type: 3}
       propertyPath: m_RootOrder
@@ -2357,7 +2309,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 953463860}
-  m_LocalRotation: {x: 0.12451125, y: 0.000000012804362, z: -0.0000000016067907, w: 0.9922182}
+  m_LocalRotation: {x: 0.12451125, y: -0.000000012804364, z: 0.0000000016067909, w: 0.9922182}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -2608,6 +2560,11 @@ PrefabInstance:
       propertyPath: NPCManager
       value: 
       objectReference: {fileID: 916921077}
+    - target: {fileID: 7961182069688334974, guid: fb9188a9ebc84ad42914369414418878,
+        type: 3}
+      propertyPath: respawnTime
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 7961182069688334975, guid: fb9188a9ebc84ad42914369414418878,
         type: 3}
       propertyPath: m_RootOrder
@@ -2940,6 +2897,11 @@ PrefabInstance:
       propertyPath: NPCManager
       value: 
       objectReference: {fileID: 916921077}
+    - target: {fileID: 7961182069688334974, guid: fb9188a9ebc84ad42914369414418878,
+        type: 3}
+      propertyPath: respawnTime
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 7961182069688334975, guid: fb9188a9ebc84ad42914369414418878,
         type: 3}
       propertyPath: m_RootOrder
@@ -3204,6 +3166,11 @@ PrefabInstance:
       propertyPath: NPCManager
       value: 
       objectReference: {fileID: 916921077}
+    - target: {fileID: 7961182069688334974, guid: fb9188a9ebc84ad42914369414418878,
+        type: 3}
+      propertyPath: respawnTime
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 7961182069688334975, guid: fb9188a9ebc84ad42914369414418878,
         type: 3}
       propertyPath: m_RootOrder
@@ -3478,7 +3445,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!64 &1464410816
 MeshCollider:
@@ -3735,6 +3702,11 @@ PrefabInstance:
       propertyPath: NPCManager
       value: 
       objectReference: {fileID: 916921077}
+    - target: {fileID: 7961182069688334974, guid: fb9188a9ebc84ad42914369414418878,
+        type: 3}
+      propertyPath: respawnTime
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 7961182069688334975, guid: fb9188a9ebc84ad42914369414418878,
         type: 3}
       propertyPath: m_RootOrder
@@ -4143,7 +4115,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!64 &1835930200
 MeshCollider:
@@ -4654,6 +4626,11 @@ PrefabInstance:
       propertyPath: NPCManager
       value: 
       objectReference: {fileID: 916921077}
+    - target: {fileID: 7961182069688334974, guid: fb9188a9ebc84ad42914369414418878,
+        type: 3}
+      propertyPath: respawnTime
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 7961182069688334975, guid: fb9188a9ebc84ad42914369414418878,
         type: 3}
       propertyPath: m_RootOrder
@@ -5054,6 +5031,11 @@ PrefabInstance:
       propertyPath: NPCManager
       value: 
       objectReference: {fileID: 916921077}
+    - target: {fileID: 7961182069688334974, guid: fb9188a9ebc84ad42914369414418878,
+        type: 3}
+      propertyPath: respawnTime
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 7961182069688334975, guid: fb9188a9ebc84ad42914369414418878,
         type: 3}
       propertyPath: m_RootOrder
@@ -6946,7 +6928,7 @@ PrefabInstance:
     - target: {fileID: 1327508872280729649, guid: 272aa679e8bb36d4980b14d55d5a0555,
         type: 3}
       propertyPath: m_RootOrder
-      value: 9
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 1327508872280729649, guid: 272aa679e8bb36d4980b14d55d5a0555,
         type: 3}
@@ -9282,6 +9264,11 @@ PrefabInstance:
       propertyPath: TaskManager
       value: 
       objectReference: {fileID: 1458394846}
+    - target: {fileID: 3152178973327602967, guid: 546866a5c4518e64a8991f636d690ab1,
+        type: 3}
+      propertyPath: CatcherManager
+      value: 
+      objectReference: {fileID: 141504103}
     - target: {fileID: 3152178973327602967, guid: 546866a5c4518e64a8991f636d690ab1,
         type: 3}
       propertyPath: catcherManager
@@ -14925,6 +14912,11 @@ PrefabInstance:
       propertyPath: NPCManager
       value: 
       objectReference: {fileID: 916921077}
+    - target: {fileID: 7961182069688334974, guid: fb9188a9ebc84ad42914369414418878,
+        type: 3}
+      propertyPath: respawnTime
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 7961182069688334975, guid: fb9188a9ebc84ad42914369414418878,
         type: 3}
       propertyPath: m_RootOrder

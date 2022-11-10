@@ -50,13 +50,13 @@ public class CatcherController : MonoBehaviour {
         if (npcController.party.Equals(playerController.CurrentTask().Name()))
         {
             Instantiate(correctExplosion, transform.position, Quaternion.identity);
-            playerController.AddPoints(correctPoints);
+            playerController.ChangePoints(correctPoints);
             playerController.RefreshTask();
         }
         else
         {
             Instantiate(wrongExplosion, transform.position, Quaternion.identity);
-            playerController.AddPoints(wrongPoints);
+            playerController.ChangePoints(wrongPoints);
         }
 
         NPCManager.DespawnNPC(npc);

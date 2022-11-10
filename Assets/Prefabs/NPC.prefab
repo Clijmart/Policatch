@@ -1022,7 +1022,7 @@ MonoBehaviour:
   NPCManager: {fileID: 1327508872280729648, guid: 272aa679e8bb36d4980b14d55d5a0555,
     type: 3}
   rotationSpeed: 3
-  partyNameText: {fileID: 941359961351293162}
+  hologram: {fileID: 941359961351293162}
 --- !u!1 &1522656483977462166
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,7 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
 public class Task
 {
     private Party party;
@@ -13,16 +9,28 @@ public class Task
         this.description = description;
     }
 
+    /// <summary>
+    /// Get the party in this task.
+    /// </summary>
+    /// <returns>The party in this task</returns>
     public Party Party()
     {
         return party;
     }
 
+    /// <summary>
+    /// Get the name of the party in this task.
+    /// </summary>
+    /// <returns>The name of the party in this task</returns>
     public string Name()
     {
         return party.name;
     }
 
+    /// <summary>
+    /// Get the description of the party in this task.
+    /// </summary>
+    /// <returns>The description of the party in this task</returns>
     public string Description()
     {
         return description;

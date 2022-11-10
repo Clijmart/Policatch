@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     [SerializeField] private NPCManager NPCManager;
-    [SerializeField] private CatcherManager catcherManager;
+    [SerializeField] private CatcherManager CatcherManager;
     [SerializeField] private TaskManager TaskManager;
     [Space]
     [SerializeField] private CharacterController controller;
@@ -65,8 +65,10 @@ public class PlayerController : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Mouse0)) Shoot();
 
-        if (Input.GetKeyDown(KeyCode.N)) RefreshSpawns();
+        // Uncomment for debugging purposes
+        // if (Input.GetKeyDown(KeyCode.N)) RefreshSpawns();
 
+        // Respawn player if it moved out of bounds
         if (!bounds.Contains(transform.position)) Respawn();
     }
 
@@ -119,7 +121,6 @@ public class PlayerController : MonoBehaviour
         float vertical = Input.GetAxisRaw("Vertical");
 
         Vector3 direction = new Vector3(horizontal, 0f, vertical).normalized;
-
         if (direction.magnitude >= 0.1f)
         {
             isMoving = true;
@@ -146,6 +147,7 @@ public class PlayerController : MonoBehaviour
     private void Jump()
     {
         animator.SetBool("IsJumping", true);
+        // Calculate jump height, including moving and sprinting multipliers
         velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity * (isMoving ? movingJumpMultiplier : 1) * (isSprinting ? sprintJumpMultiplier : 1));
     }
 
@@ -177,11 +179,11 @@ public class PlayerController : MonoBehaviour
     /// </summary>
     private void Shoot()
     {
-        catcherManager.SpawnCatcher(handTransform.position, transform.rotation, gameObject);
+        CatcherManager.SpawnCatcher(handTransform.position, transform.rotation, gameObject);
     }
 
     /// <summary>
-    /// Debugging method used to reoccupy all spawnpoints.
+    /// Debugging method used to reoccupy all empty spawnpoints.
     /// </summary>
     private void RefreshSpawns()
     {
@@ -189,7 +191,7 @@ public class PlayerController : MonoBehaviour
         {
             foreach (SpawnPoint spawn in transforms)
             {
-                if (spawn.getOccupant() == null)
+                if (spawn.GetOccupant() == null)
                 {
                     NPCManager.SpawnNPC(gameObject, spawn);
                 }
@@ -197,17 +199,32 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Get the player's points.
+    /// </summary>
+    /// <returns>The player's points</returns>
     public int Points()
     {
         return points;
     }
 
-    public void Points(int points)
+    /// <summary>
+    /// Set the player's points.
+    /// </summary>
+    /// <param name="points">The points to set to.</param>
+    /// <returns>The updated point amount</returns>
+    public int Points(int points)
     {
         this.points = points;
+        return this.points;
     }
 
-    public int AddPoints(int points)
+    /// <summary>
+    /// Change the player's points by a given amount.
+    /// </summary>
+    /// <param name="points"></param>
+    /// <returns>The updated point amount</returns>
+    public int ChangePoints(int points)
     {
         int newPoints = points + Points();
         Points(newPoints);
@@ -215,12 +232,20 @@ public class PlayerController : MonoBehaviour
         return newPoints;
     }
 
+    /// <summary>
+    /// Refesh the player's task.
+    /// </summary>
+    /// <returns>The new task</returns>
     public Task RefreshTask()
     {
         task = TaskManager.GenerateTask();
         return task;
     }
 
+    /// <summary>
+    /// Get the player's current task.
+    /// </summary>
+    /// <returns>The player's current task</returns>
     public Task CurrentTask()
     {
         return task;
