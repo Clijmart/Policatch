@@ -9,6 +9,9 @@ public class CanvasController : MonoBehaviour
     [SerializeField] private TextMeshProUGUI pointsText;
     [SerializeField] private TextMeshProUGUI taskText;
 
+    /// <summary>
+    /// Update all values on the canvas.
+    /// </summary>
     void Update()
     {
         PlayerController playerController = player.GetComponent<PlayerController>();
