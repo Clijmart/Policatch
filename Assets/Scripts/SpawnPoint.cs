@@ -16,7 +16,7 @@ public class SpawnPoint : MonoBehaviour
     /// <summary>
     /// Add spawnpoint to a list.
     /// </summary>
-    void Start()
+    void Awake()
     {
         if (!spawnPoints.ContainsKey(spawnPrefab))
         {

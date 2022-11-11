@@ -73,6 +73,8 @@ public class PlayerController : MonoBehaviour
         if (!bounds.Contains(transform.position)) Respawn();
 
         if (Input.GetKeyDown(KeyCode.C)) ToggleControlsMenu();
+
+        if (Input.GetKeyDown(KeyCode.Escape)) Application.Quit();
     }
 
     /// <summary>
