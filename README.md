@@ -1,4 +1,4 @@
-# Policatch
+# Politicatch
 A game developed in Unity for the course 'Educatieve Games Programmeren 1'
 
 **Concept:**
