@@ -35,6 +35,7 @@ public class PlayerController : MonoBehaviour
 
     private int points = 0;
     private Task task;
+    private bool controlsMenuOpen = false;
 
     /// <summary>
     /// Called on creation.
@@ -70,6 +71,8 @@ public class PlayerController : MonoBehaviour
 
         // Respawn player if it moved out of bounds
         if (!bounds.Contains(transform.position)) Respawn();
+
+        if (Input.GetKeyDown(KeyCode.C)) ToggleControlsMenu();
     }
 
     /// <summary>
@@ -197,6 +200,23 @@ public class PlayerController : MonoBehaviour
                 }
             }
         }
+    }
+
+    /// <summary>
+    /// Toggle the controls menu.
+    /// </summary>
+    public void ToggleControlsMenu()
+    {
+        controlsMenuOpen = !controlsMenuOpen;
+    }
+
+    /// <summary>
+    /// Get the current state of the controls menu.
+    /// </summary>
+    /// <returns></returns>
+    public bool ControlsMenuOpen()
+    {
+        return controlsMenuOpen;
     }
 
     /// <summary>
