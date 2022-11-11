@@ -24,6 +24,7 @@ public class SpawnPoint : MonoBehaviour
         }
 
         spawnPoints[spawnPrefab].Add(this);
+        GetComponent<Renderer>().enabled = false;
     }
 
     /// <summary>

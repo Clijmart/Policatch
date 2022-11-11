@@ -3,7 +3,8 @@
     {
       "name": "VVD",
       "descriptions": [
-        "Vang de grootste partij.",
+        "Vang de Volkspartij voor Vrijheid en Democratie.",
+        "Vang de partij met de meeste zetels in de huidige tweede kamer.",
         "Vang de partij waarvan Mark Rutte de partijleider is.",
         "Vang de partij met 34 zetels in de huidige tweede kamer."
       ]
@@ -11,23 +12,126 @@
     {
       "name": "PvdA",
       "descriptions": [
+        "Vang de Partij van de Arbeid.",
         "Vang de partij waarvan Attje Kuiken de partijleider is.",
         "Vang de partij die is voortgekomen uit de fusie van SDAP, VDB en CDU."
       ]
     },
     {
-      "name": "GroenLinks",
+      "name": "GL",
       "descriptions": [
+        "Vang GroenLinks.",
         "Vang de partij waarvan Jesse Klaver de partijleider is.",
         "Vang de partij die is voortgekomen uit de fusie van PPR, PSP, CPN en EVP.",
         "Vang de partij met 8 zetels in de huidige tweede kamer."
       ]
     },
     {
-      "name": "Democraten 66",
+      "name": "D66",
       "descriptions": [
+        "Vang de Democraten 66.",
         "Vang de partij waarvan Sigrid Kaag de partijleider is.",
         "Vang de partij met 24 zetels in de huidige tweede kamer."
+      ]
+    },
+    {
+      "name": "PVV",
+      "descriptions": [
+        "Vang de Partij voor de Vrijheid.",
+        "Vang de partij waarvan Geert Wilders de partijleider is.",
+        "Vang de partij met 17 zetels in de huidige tweede kamer."
+      ]
+    },
+    {
+      "name": "CDA",
+      "descriptions": [
+        "Vang het Christen-Democratisch Appèl.",
+        "Vang de partij waarvan Wopke Hoekstra de partijleider is.",
+        "Vang de partij met 14 zetels in de huidige tweede kamer."
+      ]
+    },
+    {
+      "name": "SP",
+      "descriptions": [
+        "Vang de Socialistische Partij.",
+        "Vang de partij waarvan Lilian Marijnissen de partijleider is.",
+        "Vang de partij die zich inzet voor het democratisch socialisme."
+      ]
+    },
+    {
+      "name": "PvdD",
+      "descriptions": [
+        "Vang de Partij voor de Dieren.",
+        "Vang de partij waarvan Esther Ouwehand de partijleider is.",
+        "Vang de partij met 6 zetels in de huidige tweede kamer.",
+        "Vang de partij die zich inzet voor dierenrechten."
+      ]
+    },
+    {
+      "name": "CU",
+      "descriptions": [
+        "Vang de ChristenUnie.",
+        "Vang de partij waarvan Gert-Jan Segers de partijleider is.",
+        "Vang de partij die is voortgekomen uit de fusie van RPF en GPV"
+      ]
+    },
+    {
+      "name": "FVD",
+      "descriptions": [
+        "Vang Forum voor Democratie.",
+        "Vang de partij waarvan Thierry Baudet de partijleider is.",
+        "Vang de partij die zich inzet voor het nationaal-conservatisme"
+      ]
+    },
+    {
+      "name": "JA21",
+      "descriptions": [
+        "Vang de partij waarvan Joost Eerdmans de partijleider is.",
+        "Vang de nieuwste partij."
+      ]
+    },
+    {
+      "name": "SGP",
+      "descriptions": [
+        "Vang de Staatkundig Gereformeerde Partij.",
+        "Vang de partij waarvan Kees van der Staaij de partijleider is.",
+        "Vang de oudste partij."
+      ]
+    },
+    {
+      "name": "DENK",
+      "descriptions": [
+        "Vang de partij waarvan Faird Azarkan de partijleider is.",
+        "Vang de partij die is voortgekomen uit een afsplitsing van de PvdA."
+      ]
+    },
+    {
+      "name": "Volt",
+      "descriptions": [
+        "Vang de partij waarvan Laurens Dassen de partijleider is.",
+        "Vang de partij met 2 zetels in de huidige tweede kamer."
+      ]
+    },
+    {
+      "name": "BBB",
+      "descriptions": [
+        "Vang de BoerBurgerBeweging.",
+        "Vang de partij waarvan Caroline van der Plas de partijleider is.",
+        "Vang de partij die zich inzet voor het agrarisme."
+      ]
+    },
+    {
+      "name": "BIJ1",
+      "descriptions": [
+        "Vang de partij waarvan Sylvana Simons de partijleider is.",
+        "Vang de partij die is voortgekomen uit een afsplitsing van DENK."
+      ]
+    },
+    {
+      "name": "50+",
+      "descriptions": [
+        "Vang de partij waarvan Martin van Rooijen de partijleider is.",
+        "Vang de partij zonder zetels in de huidige tweede kamer."
       ]
     }
   ]
