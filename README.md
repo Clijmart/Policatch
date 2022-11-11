@@ -1,7 +1,7 @@
 # Policatch
 A game developed in Unity for the course 'Educatieve Games Programmeren 1'
 
-**Omschrijving Concept:**
+**Concept:**
 In een wereld van versplintering is het lastig de verschillende politieke partijen uit elkaar te houden.
 Probeer aan de hand van de omschrijvingen de juiste partijleiders te vangen en verzamel ze allemaal!
 
